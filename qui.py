@@ -27,23 +27,23 @@ def calculate():
     outputPerc.set("Percentage heads = " + str(percentage))
     
     userInput = theEntry.get()
-    outputText.set(userInput)
 
 # Basic window configuration #
 app = Tk()
-app.geometry("400x300")
-app.title("Coin Toss GUI")
+app.geometry("300x200")
+app.title("Coin Toss Simulator")
 
-button1 = Button(app, text="Push!", command=calculate)
-button1.pack()
+
+welcomeText = IntVar()
+welcomeText.set("How many coin tosses?")
+welcome = Label(app, textvariable=welcomeText)
+welcome.pack()
 
 theEntry = Entry(app)
 theEntry.pack()
 
-outputText = IntVar()
-outputText.set("Nothing...")
-output = Label(app, textvariable=outputText)
-output.pack()
+button1 = Button(app, text="Simulate!", command=calculate)
+button1.pack()
 
 outputHeads = IntVar()
 outputHeads.set("")
