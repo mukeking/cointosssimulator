@@ -33,18 +33,21 @@ app = Tk()
 app.geometry("300x200")
 app.title("Coin Toss Simulator")
 
-
+# Instructions text #
 welcomeText = IntVar()
 welcomeText.set("How many coin tosses?")
 welcome = Label(app, textvariable=welcomeText)
 welcome.pack()
 
+# User input #
 theEntry = Entry(app)
 theEntry.pack()
 
+# Button #
 button1 = Button(app, text="Simulate!", command=calculate)
 button1.pack()
 
+# Output Labels #
 outputHeads = IntVar()
 outputHeads.set("")
 outputHeadsLabel = Label(app, textvariable=outputHeads)
