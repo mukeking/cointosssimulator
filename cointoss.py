@@ -8,25 +8,34 @@ def calculate():
 
     times = theEntry.get()
     times = int(times)
-
-    while count < times:
-        rand = random.randint(1,2)
-        # Checks if head or tail #
-        if rand == 1:
-            heads += 1
-        else:
-            tails += 1
-        count += 1
-
-    # Basic formula for calculating percentage #
-    percentage = (float(heads) / count) * 100
-
-    # Print statements #
-    outputHeads.set("Heads = " + str(heads))
-    outputTails.set("Tails = " + str(tails))
-    outputPerc.set("Percentage heads = " + str(percentage))
     
-    userInput = theEntry.get()
+    outputHeads.set("")
+    outputTails.set("")
+    outputPerc.set("")
+    
+    if times > 1000000:
+    	outputHeads.set("Sorry! Number too high...")
+    elif times < 0:
+    	outputHeads.set("Don't put in negative values!")
+    else:
+		while count < times:
+			rand = random.randint(1,2)
+			# Checks if head or tail #
+			if rand == 1:
+				heads += 1
+			else:
+				tails += 1
+			count += 1
+
+		# Basic formula for calculating percentage #
+		percentage = (float(heads) / count) * 100
+
+		# Output statements #
+		outputHeads.set("Heads = " + str(heads))
+		outputTails.set("Tails = " + str(tails))
+		outputPerc.set("Percentage heads = " + str(percentage))
+	
+		userInput = theEntry.get()
 
 # Basic window configuration #
 app = Tk()
